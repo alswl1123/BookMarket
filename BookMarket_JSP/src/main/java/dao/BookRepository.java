@@ -45,4 +45,18 @@ public class BookRepository {
 		return listOfBooks;
 	}
 	
+	//도서 상세 정보를 가져오는 메서드 만들기
+	public Book getBookById(String bookId) {
+		Book bookById = null;
+		
+		for(int i=0; i<listOfBooks.size(); i++) {
+			Book book = listOfBooks.get(i);
+			if(book!=null && book.getBookId()!=null && book.getBookId().equals(bookId)) {
+				bookById=book;
+				break;
+			}
+		}
+		return bookById;
+	}
+	
 }
