@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import = "java.util.ArrayList" %>
 <%@ page import = "dto.Book" %>
+<%@ page import = "dao.BookRepository" %> <!-- dao 가 싱글턴이라 객체 생성 안 함 -->
 <jsp:useBean id="bookDAO" class="dao.BookRepository" scope="session" />
 
 <html>
@@ -21,6 +22,7 @@
 		</div>
 	</div>
 	<%
+		BookRepository dao=BookRepository.getInstance();
 		ArrayList<Book> listOfBooks=bookDAO.getAllBooks();
 	%>
 
