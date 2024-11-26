@@ -7,6 +7,11 @@ import dto.Book;
 public class BookRepository {
 	
 	private ArrayList<Book> listOfBooks=new ArrayList<Book>(); //객체
+	private static BookRepository instance=new BookRepository();
+	
+	public static BookRepository getInstance() {
+		return instance;
+	} //싱글턴
 	
 	public BookRepository() {
 		Book book1 = new Book("ISBN1234", "C# 프로그래밍", 27000);
@@ -59,4 +64,9 @@ public class BookRepository {
 		return bookById;
 	}
 	
+	//신규 도서 데이터를 저장하는 메소드 만들기
+	public void addBook(Book book) {
+		listOfBooks.add(book);	
+	
+	}
 }
