@@ -2,7 +2,7 @@
 <%@ page import = "java.util.ArrayList" %>
 <%@ page import = "dto.Book" %>
 <%@ page import = "dao.BookRepository" %> <!-- dao 가 싱글턴이라 객체 생성 안 함 -->
-<jsp:useBean id="bookDAO" class="dao.BookRepository" scope="session" />
+<!--<jsp:useBean id="bookDAO" class="dao.BookRepository" scope="session" />-->
 
 <html>
 <head>
