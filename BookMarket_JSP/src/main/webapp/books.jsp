@@ -23,7 +23,7 @@
 	</div>
 	<%
 		BookRepository dao=BookRepository.getInstance();
-		ArrayList<Book> listOfBooks=bookDAO.getAllBooks();
+		ArrayList<Book> listOfBooks=dao.getAllBooks();
 	%>
 
 	<div class="row align-items-md-stretch text-center">
