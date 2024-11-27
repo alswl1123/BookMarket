@@ -6,16 +6,17 @@ public class Book implements Serializable {
 
 	private static final long serialVersionUID = -4274700572038677000L; // 생략 가능
 
-	private String bookId; // 도서ID
-	private String name; // 도서명
-	private int unitPrice; // 가격
-	private String author; // 저자
-	private String description; // 설명
-	private String publisher; // 출판사
-	private String category; // 분류
-	private long unitsInStock; // 재고개수
-	private String releaseDate; // 출판일(월/년)
-	private String condition; // 신제품 or 구제품 or 리퍼브제품
+	private String bookId;        // 도서ID
+	private String name;          // 도서명
+	private int unitPrice;        // 가격
+	private String author;        // 저자
+	private String description;   // 설명
+	private String publisher;     // 출판사
+	private String category;      // 분류
+	private long unitsInStock;    // 재고개수
+	private String releaseDate;   // 출판일(월/년)
+	private String condition;     // 신제품 or 구제품 or 리퍼브제품
+	private String filename;      // 이미지 파일명
 
 	// 기본 생성자 작성하기
 	// Source - Generate Constructors from Superclass - Object - Generate
@@ -23,7 +24,8 @@ public class Book implements Serializable {
 		super();
 	}
 
-	// Source - Generate Constructors Using Fields - bookId, name, unitPrice 선택 - Generate
+	// Source - Generate Constructors Using Fields - bookId, name, unitPrice 선택 -
+	// Generate
 	public Book(String bookId, String name, int unitPrice) {
 		this.bookId = bookId;
 		this.name = name;
@@ -110,4 +112,17 @@ public class Book implements Serializable {
 	public void setCondition(String condition) {
 		this.condition = condition;
 	}
+
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+	
+	
+
+
+
 }
