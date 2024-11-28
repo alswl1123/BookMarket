@@ -1,6 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="dto.Book" %>
 <%@ page import="dao.BookRepository" %>
+<%@ page import="com.oreilly.servlet.*" %>
+<%@ page import="com.oreilly.servlet.multipart.*" %>
+<%@ page import="java.util.*" %>
 <html>
 <head>
 <title>processAddBook</title>
@@ -10,17 +13,24 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 
+	String save = request.getServletContext().getRealPath("images");
+	MultipartRequest multi = new MultipartRequest(request,save,5*1024*1024,"utf-8", new DefaultFileRenamePolicy()); 
+
 	//전달만 받는 변수
-	String bookId = request.getParameter("bookId");
-	String name = request.getParameter("name");
-	String unitPrice = request.getParameter("unitPrice");
-	String author = request.getParameter("author");
-	String publisher = request.getParameter("publisher");
-	String releaseDate = request.getParameter("releaseDate");
-	String description = request.getParameter("description");
-	String category = request.getParameter("category");
-	String unitsInStock = request.getParameter("unitsInStock");
-	String condition = request.getParameter("condition");
+	String bookId = multi.getParameter("bookId");
+	String name = multi.getParameter("name");
+	String unitPrice = multi.getParameter("unitPrice");
+	String author = multi.getParameter("author");
+	String publisher = multi.getParameter("publisher");
+	String releaseDate = multi.getParameter("releaseDate");
+	String description = multi.getParameter("description");
+	String category = multi.getParameter("category");
+	String unitsInStock = multi.getParameter("unitsInStock");
+	String condition = multi.getParameter("condition");
+	
+	Enumeration files=multi.getFileNames();
+	String fname = (String)files.nextElement();
+	String fileName=multi.getFilesystemName("fname"); //문자열이 들어가야 함
 
 	Integer price;
 	
@@ -53,6 +63,8 @@
 	
 	newBook.setUnitsInStock(stock);
 	newBook.setUnitPrice(price);
+	
+	newBook.setFilename(fileName);
 	
 	dao.addBook(newBook); //객체 넘김
 	
