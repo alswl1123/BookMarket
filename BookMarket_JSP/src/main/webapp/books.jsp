@@ -6,9 +6,9 @@
 
 <html>
 <head>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-	rel="stylesheet">
+<link rel="stylesheet"
+	href="./resources/css/bootstrap.min.css"/>
+
 <title>도서 목록</title>
 </head>
 <body>
@@ -32,7 +32,8 @@
 			Book book=listOfBooks.get(i);
 	%>
 	<div class="col-md-4">
-		<div class="h-100 p-2">
+		<div class="h-100 p-2">       <!-- 이 부분 대문자 Book이면 오류 남 -->
+			<img src="./resources/images/<%=book.getFilename() %>" style="width:250; height:350"/>
 			<h5><b><%= book.getName() %></b></h5>
 			<p> <%= book.getAuthor() %>
 			<br><%= book.getPublisher() %> | <%= book.getUnitPrice() %>원

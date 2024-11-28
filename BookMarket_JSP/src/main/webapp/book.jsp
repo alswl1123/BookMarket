@@ -4,10 +4,9 @@
 <!--<jsp:useBean id="bookDAO" class="dao.BookRepository" scope="session" />-->
 <html>
 <head>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-	rel="stylesheet">
-<title>도서 정보</title>
+<link rel="stylesheet"
+	href="./resources/css/bootstrap.min.css"/>
+<title>도서 상세 정보</title>
 </head>
 <body>
 	<div class="container py-4">
@@ -21,13 +20,16 @@
 		</div>
 
 		<%
-		String id = request.getParameter("id");
+		String id=request.getParameter("id");
 		BookRepository dao=BookRepository.getInstance();
-		Book book = dao.getBookById(id);
+		Book book=dao.getBookById(id);
 		%>
 
 		<div class="row align-items-md-stretch">
-			<div class="col-md-12">
+			<div class="col-md-5">
+				<img src="./resources/images/<%=book.getFilename() %>" style="width:70%">
+			</div>
+			<div class="col-md-6">
 				<h3>
 					<b><%=book.getName()%></b>
 				</h3>
