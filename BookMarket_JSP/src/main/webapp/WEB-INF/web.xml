@@ -27,10 +27,11 @@
   		<form-error-page>/login_failed.jsp</form-error-page>
   	</form-login-config>
   	
+  </login-config>
+
   	<!-- 에러 처리 페이지 -->
   	<error-page>
   		<error-code>404</error-code>
   		<location>/exceptionNoPage.jsp</location>
   	</error-page>
-  </login-config>
 </web-app>
