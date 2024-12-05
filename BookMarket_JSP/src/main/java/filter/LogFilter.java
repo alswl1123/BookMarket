@@ -40,10 +40,10 @@ public class LogFilter implements Filter {
 		HttpServletRequest req;
 		String currentPath="";
 		String queryString="";
-		if(request instanceof HttpServletRequest) {
+		if(request instanceof HttpServletRequest) { //of : ~안에, ~의 (instanceof 는 true/false 반환)
 			req = (HttpServletRequest)request;
 			currentPath=req.getRequestURI();
-			queryString = req.getQueryString();
+			queryString = req.getQueryString();//true : false 구조(삼항연산자)
 			queryString = queryString==null ? "" : "?" + queryString;
 		}
 		return currentPath+queryString;
