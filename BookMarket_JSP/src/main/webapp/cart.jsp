@@ -18,11 +18,8 @@ String cartId = session.getId();
 
 		<div class="p-5 mb-4 bg-body-tertiary rounded-3">
 			<div class="container-fluid py-5">
-				<h1 class="display-5 fw-bold">
-					<fmt:message key="title" />
-				</h1>
-				<!-- <h1 class="display-5 fw-bold">도서 등록</h1> -->
-				<p class="col-md-8 fs-4">Book Addition</p>
+				<h1 class="display-5 fw-bold">장바구니</h1>
+				<p class="col-md-8 fs-4">Cart</p>
 			</div>
 		</div>
 
@@ -31,8 +28,8 @@ String cartId = session.getId();
 				<table width="100%">
 					<tr>
 						<td align="left"><a
-							href="./deleteCart.jsp?cartId=<%=cartId%>"
-							class="btn btn-danger">삭제하기</a></td>
+							href="./deleteCart.jsp?cartId=<%=cartId%>" class="btn btn-danger">삭제하기</a></td>
+						<td align="right"><a href="#" class="btn btn-success">주문하기</a></td>
 					</tr>
 				</table>
 			</div>
