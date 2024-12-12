@@ -4,6 +4,8 @@
 <%@ page import="com.oreilly.servlet.*" %>
 <%@ page import="com.oreilly.servlet.multipart.*" %>
 <%@ page import="java.util.*" %>
+<%@ page import="java.sql.*" %>
+<%@ include file="dbconn.jsp" %>
 <html>
 <head>
 <title>processAddBook</title>
@@ -70,7 +72,35 @@
 	
 	response.sendRedirect("books.jsp");
 
-
+	if(unitsInStock.isEmpty())
+		stock=0;
+	else
+		stock=Long.valueOf(unitsInStock);
+		
+	PreparedStatement pstmt=null;
+	
+	String sql="INSERT INTO book VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+	
+	pstmt=conn.prepareStatement(sql);
+	pstmt.setString(1, bookId);
+	pstmt.setString(2, name);
+	pstmt.setInt(3, price);
+	pstmt.setString(4, author);
+	pstmt.setString(5, description);
+	pstmt.setString(6, publisher);
+	pstmt.setString(7, category);
+	pstmt.setLong(8, stock);
+	pstmt.setString(9, releaseDate);
+	pstmt.setString(10, condition);
+	pstmt.setString(11, fileName);
+	pstmt.executeUpdate();
+	
+	if(pstmt!=null)
+		pstmt.close();
+	if(conn!=null)
+		conn.close();
+	
+	response.sendRedirect("books.jsp");
 %>
 
 </body>
