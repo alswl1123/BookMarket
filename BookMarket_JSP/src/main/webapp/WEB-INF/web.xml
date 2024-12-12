@@ -10,11 +10,15 @@
 	</security-role>
 	<security-constraint>
 		<display-name>BookMarket Security</display-name>
+		
+		<!-- 이 부분 editBook.jsp 추가됨 -->
 		<web-resource-collection>
 			<web-resource-name>BookMarket_JSP</web-resource-name>
 			<description></description>
 			<url-pattern>/addBook.jsp</url-pattern>
+			<url-pattern>/editBook.jsp</url-pattern>
 		</web-resource-collection>
+		
 		<auth-constraint>
 			<description>권한 관리자명</description>
 			<role-name>admin</role-name>
