@@ -52,7 +52,7 @@
 			<img src="./resources/images/<%=rs.getString("b_filename") %>" style="width:250; height:350" />
 			<h5><b><%=rs.getString("b_name") %></b></h5>
 			<p> <%=rs.getString("b_author") %>
-			<br><%=rs.getString("b_publisher") %> | <%=rs.getString("b_unitPrice") %>원
+			<br><%=rs.getString("b_publisher") %> | <%=rs.getString("b_releaseDate") %>
 			<p><%=rs.getString("b_description").substring(0,60) %>...
 			<p><%=rs.getString("b_unitPrice") %>원
 			<p><a href="./book.jsp?id=<%= rs.getString("b_id") %>" class="btn btn-secondary" role="button"> 상세 정보 &raquo;</a>
