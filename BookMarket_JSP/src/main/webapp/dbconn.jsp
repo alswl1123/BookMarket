@@ -12,9 +12,9 @@
 	Connection conn = null;
 
 	try {
-		String url = "jdbc:myslq://localhost:3306/bookmarketdb";
-		String user = "root";
-		String password = "1234";
+		String url="jdbc:mysql://localhost:3306/bookmarketdb";
+		String user="root";
+		String password="1234";
 
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(url, user, password);
@@ -23,6 +23,5 @@
 		out.println("SQLException : " + ex.getMessage());
 	}
 	%>
-	}
 </body>
 </html>
