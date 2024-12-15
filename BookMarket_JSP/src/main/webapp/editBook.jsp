@@ -8,6 +8,14 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
 	rel="stylesheet">
 <title>도서 편집</title>
+<script type="text/javascript">
+	function deleteConfirm(id) {
+		if(confirm("해당 도서를 삭제합니다!!")==true)
+			location.href="./deleteBook.jsp?id=" + id; //location.href 통해 자바스크립트 요청 발생
+		else
+			return;
+	}
+</script>
 </head>
 <%
 	String edit=request.getParameter("edit");
@@ -45,6 +53,10 @@
 					if(edit.equals("update")) {
 					%>
 					<a href="./updateBook.jsp?id=<%= rs.getString("b_id")%>" class="btn btn-success" role="button"> 수정 &raquo;</a>
+					<%
+					} else if(edit.equals("delete")) {
+					%>
+					<a href="#" onclick="deleteConfirm('<%=rs.getString("b_id")%>')" class="btn btn-danger" role="button"> 삭제 &raquo;</a>
 					<%
 					}
 					%>
