@@ -36,14 +36,15 @@
 						<li class="nav-item"><a class="nav-link" href="<c:url value="/member/updateMember.jsp"/>">회원 수정</a></li>
 					</c:otherwise>
 					</c:choose>
-					<li class="nav-item"><a href="./books.jsp" class="nav-link">도서
+					<li class="nav-item"><a href="<c:url value="/books.jsp"/>" class="nav-link">도서
 							목록</a></li>
-					<li class="nav-item"><a href="./addBook.jsp" class="nav-link">도서
+					<li class="nav-item"><a href="<c:url value="/addBook.jsp"/>" class="nav-link">도서
 							등록</a></li>
-					<li class="nav-item"><a href="./editBook.jsp?edit=update" class="nav-link">도서
+					<li class="nav-item"><a href="<c:url value="/editBook.jsp?edit=update"/>" class="nav-link">도서
 							수정</a></li>
-					<li class="nav-item"><a href="./editBook.jsp?edit=delete" class="nav-link">도서
+					<li class="nav-item"><a href="<c:url value="/editBook.jsp?edit=delete"/>" class="nav-link">도서
 							삭제</a></li>
+					<li class="nav-item"><a href="<c:url value="/BoardListAction.do?pageNum=1"/>" class="nav-link">게시판</a></li>
 				</ul>
 			</div>
 		</div>
